@@ -14,7 +14,6 @@ class Connection {
    */
   constructor(server) {
     this.io = io(server);
-    // this.io.set("origins", "http://localhost:3000/");
     this.rooms = new Map();
     this.checkGuess = null;
     this.init();

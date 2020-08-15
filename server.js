@@ -9,7 +9,11 @@ const connection = new Connection(server);
 if (app.get("env") === "development") {
   app.use(cors());
 } else {
-  app.use(cors());
+  app.use(
+    cors({
+      origin: process.env.ALLOWED_ORIGIN,
+    })
+  );
 }
 
 app.set("port", process.env.PORT || 5000);
