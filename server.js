@@ -7,17 +7,9 @@ const Connection = require("./connection/connection");
 const connection = new Connection(server);
 
 if (app.get("env") === "development") {
-  app.use(
-    cors({
-      origin: "http://localhost:3000/",
-    })
-  );
+  app.use(cors());
 } else {
-  app.use(
-    cors({
-      origin: "http://localhost:3000/",
-    })
-  );
+  app.use(cors());
 }
 
 app.set("port", process.env.PORT || 5000);
