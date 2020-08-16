@@ -13,7 +13,7 @@ class Connection {
    * @property {Map<string, Room>} - The rooms managed by the connection
    */
   constructor(server) {
-    this.io = io(server);
+    this.io = io(server, { pingInterval: 10000, pingTimeout: 60000 });
     this.rooms = new Map();
     this.checkGuess = null;
     this.init();
