@@ -55,15 +55,16 @@ class Game {
     this.currentTeam = this.prevTeam === "blue" ? "red" : "blue";
 
     // list out the names of the available drawbotages
-    this.drawbotages = ["reverse", "hide", "color", "bulldoze"];
+    // this.drawbotages = ["reverse", "hide", "color", "bulldoze"];
+    this.drawbotages = ["reverse", "hide", "color"];
 
     // create a managed list of players and calculate the number of turns per round
     const { redPlayerNames, bluePlayerNames } = room.info();
     this.red = new PlayerList(room, redPlayerNames);
     this.blue = new PlayerList(room, bluePlayerNames);
     this.turnsPerRound = Math.max(
-      redPlayerNames.length,
-      bluePlayerNames.length
+      redPlayerNames.length * 2,
+      bluePlayerNames.length * 2
     );
   }
 
@@ -95,9 +96,9 @@ class Game {
       return;
     }
 
-    // previous gap was 150 - not sure if changing to 100 will break the tests
+    // previous gap was 150 - not sure if changing to 50 will break the tests
     // if the other team is behind by a certain amount, let a player from that team choose a drawbotage
-    if (prevTeamScore + 100 <= currentTeamScore) {
+    if (prevTeamScore + 50 <= currentTeamScore) {
       await this.selectDrawbotage();
     }
 
