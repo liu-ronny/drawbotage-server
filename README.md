@@ -6,7 +6,7 @@ Players can create lobby rooms and invite friends to play using a generated link
 
 ## Contents
 
-This repository contains the backend code for Drawbotage. The frontend code is hosted [here](https://github.com/liu-ronny/drawbotage-server). Drawbotage was built using React.js and Node.js.
+This repository contains the backend code for Drawbotage. The frontend code is hosted [here](https://github.com/liu-ronny/drawbotage). Drawbotage was built using React.js and Node.js.
 
 ## Demo
 
